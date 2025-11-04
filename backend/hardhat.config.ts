@@ -12,6 +12,8 @@ import "solidity-coverage";
 // Run 'npx hardhat vars setup' to see the list of variables that need to be set
 // Environment variables can be set via PowerShell: $env:MNEMONIC="your mnemonic"
 // Or via hardhat vars: npx hardhat vars set MNEMONIC
+//
+// Network configuration for local development and testnet deployment
 
 const MNEMONIC: string = process.env.MNEMONIC || vars.get("MNEMONIC", "test test test test test test test test test test test junk");
 const INFURA_API_KEY: string = vars.get("INFURA_API_KEY", "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
