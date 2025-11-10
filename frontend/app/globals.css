@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global styles for FHE Pet Life application */
+
 @layer base {
   body {
     @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
