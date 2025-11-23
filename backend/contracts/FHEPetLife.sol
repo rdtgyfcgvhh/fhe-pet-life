@@ -10,6 +10,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @title FHE Pet Life - Privacy-preserving pet simulation DApp
 /// @author FHEPetLife
 /// @notice A pet NFT system with encrypted hunger, happiness, and growth values using FHEVM
+/// @dev Uses FHEVM for fully homomorphic encryption of pet attributes
 contract FHEPetLife is ZamaEthereumConfig, ERC721, ERC721URIStorage, Ownable {
     // Token ID counter
     uint256 private _tokenIdCounter;
