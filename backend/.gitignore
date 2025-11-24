@@ -1,0 +1,19 @@
+node_modules
+.env
+.nyc_output
+coverage
+.coverage
+dist
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
+# FHEVM temp files
+fhevmTemp
+
+# Deployment files
+deployments/*.json
+!deployments/.gitkeep
+

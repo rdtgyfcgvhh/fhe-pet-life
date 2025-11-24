@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+  }
+  
+  .stat-card {
+    @apply relative overflow-hidden rounded-2xl p-6;
+  }
+  
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br opacity-20;
+  }
+  
+  .glow-button {
+    @apply relative overflow-hidden;
+  }
+  
+  .glow-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-purple-500/50 to-pink-500/50 blur-xl opacity-0 transition-opacity duration-300;
+  }
+  
+  .glow-button:hover::before {
+    @apply opacity-100;
+  }
+  
+  .animated-gradient {
+    background: linear-gradient(
+      270deg,
+      rgba(168, 85, 247, 0.4),
+      rgba(236, 72, 153, 0.4),
+      rgba(59, 130, 246, 0.4)
+    );
+    background-size: 600% 600%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
