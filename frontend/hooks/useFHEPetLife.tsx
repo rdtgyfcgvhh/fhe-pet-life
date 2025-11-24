@@ -292,14 +292,16 @@ export const useFHEPetLife = (parameters: {
           return;
         }
 
-        if (thisHungerHandle && res[thisHungerHandle] !== undefined) {
-          setClearHunger({ handle: thisHungerHandle, clear: res[thisHungerHandle] });
+        const resultByHandle = res as unknown as Record<string, string | bigint | boolean>;
+
+        if (thisHungerHandle && resultByHandle[thisHungerHandle] !== undefined) {
+          setClearHunger({ handle: thisHungerHandle, clear: resultByHandle[thisHungerHandle] });
         }
-        if (thisHappinessHandle && res[thisHappinessHandle] !== undefined) {
-          setClearHappiness({ handle: thisHappinessHandle, clear: res[thisHappinessHandle] });
+        if (thisHappinessHandle && resultByHandle[thisHappinessHandle] !== undefined) {
+          setClearHappiness({ handle: thisHappinessHandle, clear: resultByHandle[thisHappinessHandle] });
         }
-        if (thisGrowthHandle && res[thisGrowthHandle] !== undefined) {
-          setClearGrowth({ handle: thisGrowthHandle, clear: res[thisGrowthHandle] });
+        if (thisGrowthHandle && resultByHandle[thisGrowthHandle] !== undefined) {
+          setClearGrowth({ handle: thisGrowthHandle, clear: resultByHandle[thisGrowthHandle] });
         }
 
         setMessage("Decryption completed!");
